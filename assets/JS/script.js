@@ -19,11 +19,14 @@ function drawWeather( d ) {
     var celcius = Math.round(parseFloat(d.main.temp)-273.15);
 	var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
 	
-	document.getElementById('description').innerHTML = d.weather[0].description;
+  document.getElementById('location').innerHTML = `Location: ${d.name}`;
+  document.getElementById('description').innerHTML = `Description: ${d.weather[0].description}`;
 	document.getElementById('temp').innerHTML = fahrenheit + '&deg;';
-	document.getElementById('location').innerHTML = d.name;
+  document.getElementById('wind').innerHTML = `Wind: ${d.wind.speed}`;
+
 }
 
   window.onload = function() {
     weatherReport( "London" );
   }
+  
