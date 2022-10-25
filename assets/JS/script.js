@@ -21,12 +21,11 @@ function drawWeather( d ) {
 	
   document.getElementById('location').innerHTML = `Location: ${d.name}`;
   document.getElementById('description').innerHTML = `Description: ${d.weather[0].description}`;
-	document.getElementById('temp').innerHTML = fahrenheit + '&deg;';
-  document.getElementById('wind').innerHTML = `Wind: ${d.wind.speed}`;
-
+	document.getElementById('temp').innerHTML = `Temperature: ${fahrenheit}  &deg F`;
+  document.getElementById('wind').innerHTML = `Wind: ${d.wind.speed} m/s`;
+  document.getElementById('humidity').innerHTML = `Humidity: ${d.main.humidity} %`;
 }
 
   window.onload = function() {
     weatherReport( "London" );
   }
-  
