@@ -8,7 +8,7 @@ This code generates a site that allows users to search for a city and view curre
 
 ## Screenshot
 
-<img src="">
+<img src="./assets/images/screenshot.png">
 
 ## Links
 
