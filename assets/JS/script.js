@@ -34,7 +34,7 @@ function weatherReport(cityName) {
 
 // Geocoding API for finding lattitude and longitude of city
 function geoCode(cityName) {
-  fetch('http://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=' + APIKey)
+  fetch('https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=' + APIKey)
     .then(function (resp) { return resp.json() })
     .then(function (data) {
       lat = data[0].lat;
