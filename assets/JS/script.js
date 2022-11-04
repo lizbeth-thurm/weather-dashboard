@@ -11,7 +11,6 @@ var button2 = document.getElementById('button-addon2');
 
 // Logic for getting city name from search box when button is clickedl.
 button2.addEventListener("click", function () {
-  localStorage.setItem('cityStore', citySearch.value);
   console.log(cityStore)
   geoCode(citySearch.value);
   weatherReport(citySearch.value);
