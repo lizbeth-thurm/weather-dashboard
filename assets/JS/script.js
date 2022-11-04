@@ -25,7 +25,7 @@ function weatherReport(cityName) {
 
       drawWeather(data);
       console.log(data);
-    })
+    });
     .catch(function () {
       // catch any errors
     });
@@ -39,6 +39,9 @@ function geoCode(cityName) {
       lat = data[0].lat;
       lon = data[0].lon;
       fiveDay(lat, lon);
+    });
+    .catch(function () {
+
     });
 }
 
