@@ -30,7 +30,7 @@
                             class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-6 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             id="citySearch" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
                         <button
-                            class="btn inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+                            class="btn px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out flex items-center"
                             type="button" id="button-addon2">
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="w-4"
                                 role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -80,20 +80,35 @@
             <div class="flex-auto" id=forecastRow>
                 <!--Forecast Boxes-->
                 <h3 class="flex-col m-6">5-Day Forecast</h3>
-                <div class="bg-blue-800 flex w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox1>
-                    Monday
+                <div class="bg-blue-800 flex-col w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox1>
+                    <div id="date1"></div>
+                    <div id="temp1"></div>
+                    <div id="wind1"></div>
+                    <div id="humidity1"></div>
                 </div>
-                <div class="bg-blue-800 flex w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox2>
-                    Tuesday
+                <div class="bg-blue-800 flex-col w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox2>
+                    <div id="date2"></div>
+                    <div id="temp2"></div>
+                    <div id="wind2"></div>
+                    <div id="humidity2"></div>
                 </div>
-                <div class="bg-blue-800 flex w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox3>
-                    Wednesday
+                <div class="bg-blue-800 flex-col w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox3>
+                    <div id="date3"></div>
+                    <div id="temp3"></div>
+                    <div id="wind3"></div>
+                    <div id="humidity3"></div>
                 </div>
-                <div class="bg-blue-800 flex w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox4>
-                    Thursday
+                <div class="bg-blue-800 flex-col w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox4>
+                    <div id="date4"></div>
+                    <div id="temp4"></div>
+                    <div id="wind4"></div>
+                    <div id="humidity4"></div>
                 </div>
-                <div class="bg-blue-800 flex w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox5>
-                    Friday
+                <div class="bg-blue-800 flex-col w-64 m-2 border-black border-4 p-2 h-32 text-white" id=forecastBox5>
+                    <div id="date5"></div>
+                    <div id="temp5"></div>
+                    <div id="wind5"></div>
+                    <div id="humidity5"></div>
                 </div>
             </div>
         </div>
