@@ -9,14 +9,6 @@ var cityStore; // stores city name
 var citySearch = document.getElementById('citySearch');
 var button2 = document.getElementById('button-addon2');
 
-// Logic for getting city name from search box when button is clickedl.
-button2.addEventListener("click", function () {
-  console.log(cityStore)
-  geoCode(citySearch.value);
-  weatherReport(citySearch.value);
-});
-
-
 //  Weather report for main weather box
 function weatherReport(cityName) {
   fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + APIKey)
@@ -25,10 +17,10 @@ function weatherReport(cityName) {
 
       drawWeather(data);
       console.log(data);
-    });
+    })
     .catch(function () {
       // catch any errors
-    });
+    })
 }
 
 // Geocoding API for finding lattitude and longitude of city
@@ -39,10 +31,10 @@ function geoCode(cityName) {
       lat = data[0].lat;
       lon = data[0].lon;
       fiveDay(lat, lon);
-    });
+    })
     .catch(function () {
 
-    });
+    })
 }
 
 // Function to display weather data in main weather report box
@@ -96,4 +88,13 @@ function drawFiveDay(d) {
   document.getElementById('wind5').innerHTML = `Wind: ${d.list[39].wind.speed} m/s`;
   document.getElementById('humidity5').innerHTML = `Humidity: ${d.list[39].main.humidity} %`;
 }
+
+
+// Logic for getting city name from search box when button is clickedl.
+button2.addEventListener("click", function () {
+  console.log(cityStore)
+  geoCode(citySearch.value);
+  weatherReport(citySearch.value);
+});
+
 
