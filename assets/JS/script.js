@@ -51,7 +51,7 @@ function drawWeather(d) {
 
 // Function to get five-day forecast data and display it.
 function fiveDay(lat, lon) {
-  fetch('http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + APIKey + '&units=imperial')
+  fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + APIKey + '&units=imperial')
     .then(function (resp) { return resp.json() })
     .then(function (data) {
 
