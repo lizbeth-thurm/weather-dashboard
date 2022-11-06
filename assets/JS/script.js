@@ -4,10 +4,20 @@ var resp; // variable for json response
 var data; // variable for json data
 var lat; // variable for lattitude of city
 var lon; // variable for longitude of city
-var cityStore; // stores city name
+
+var cityList = []; // array for list of cities
 
 var citySearch = document.getElementById('citySearch');
 var button2 = document.getElementById('button-addon2');
+
+console.log(cityList);
+
+// Create and display list of cities searched
+function logCity(cityName){
+  cityList.unshift(cityName);
+  console.log(cityList);
+  document.getElementById('cityBox1').innerHTML = cityList[0];
+}
 
 //  Weather report for main weather box
 function weatherReport(cityName) {
@@ -92,7 +102,7 @@ function drawFiveDay(d) {
 
 // Logic for getting city name from search box when button is clickedl.
 button2.addEventListener("click", function () {
-  console.log(cityStore)
+  logCity(citySearch.value);
   geoCode(citySearch.value);
   weatherReport(citySearch.value);
 });
