@@ -7,13 +7,13 @@ var lon; // variable for longitude of city
 var cityIt; // iterate the city count
 
 var cityList = []; // array for list of cities
-var cityStore = []; // array for local storage of cities
 
 var citySearch = document.getElementById('citySearch');
 var button2 = document.getElementById('button-addon2');
 
-// Create and display list of cities searched
+// Create and display list of cities searched - store city data to local storage
 function logCity(cityName) {
+
   // Shift array to put newest city first
   cityList.unshift(cityName);
 
