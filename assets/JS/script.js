@@ -4,6 +4,7 @@ var resp; // variable for json response
 var data; // variable for json data
 var lat; // variable for lattitude of city
 var lon; // variable for longitude of city
+var cityIt = 0; // iterate the city count
 
 var cityList = []; // array for list of cities
 
@@ -13,10 +14,52 @@ var button2 = document.getElementById('button-addon2');
 console.log(cityList);
 
 // Create and display list of cities searched
-function logCity(cityName){
+function logCity(cityName) {
   cityList.unshift(cityName);
+
   console.log(cityList);
+
   document.getElementById('cityBox1').innerHTML = cityList[0];
+  document.getElementById('cityBox2').innerHTML = cityList[1];
+  document.getElementById('cityBox3').innerHTML = cityList[2];
+  document.getElementById('cityBox4').innerHTML = cityList[3];
+  document.getElementById('cityBox5').innerHTML = cityList[4];
+  document.getElementById('cityBox6').innerHTML = cityList[5];
+  document.getElementById('cityBox7').innerHTML = cityList[6];
+
+  if (cityIt == 0) {
+    document.getElementById('cityBox1').classList.remove("invisible");
+    document.getElementById('cityBox1').classList.add("visible");
+
+  }
+  else if (cityIt == 1) {
+    document.getElementById('cityBox2').classList.remove("invisible");
+    document.getElementById('cityBox2').classList.add("visible");
+  }
+  else if (cityIt == 2) {
+    document.getElementById('cityBox3').classList.remove("invisible");
+    document.getElementById('cityBox3').classList.add("visible");
+  }
+  else if (cityIt == 3) {
+    document.getElementById('cityBox4').classList.remove("invisible");
+    document.getElementById('cityBox4').classList.add("visible");
+  }
+  else if (cityIt == 4) {
+    document.getElementById('cityBox5').classList.remove("invisible");
+    document.getElementById('cityBox5').classList.add("visible");
+  }
+  else if (cityIt == 5) {
+    document.getElementById('cityBox6').classList.remove("invisible");
+    document.getElementById('cityBox6').classList.add("visible");
+  }
+  else if (cityIt == 6) {
+    document.getElementById('cityBox7').classList.remove("invisible");
+    document.getElementById('cityBox7').classList.add("visible");
+  }
+else {
+
+}
+  cityIt = cityIt + 1;
 }
 
 //  Weather report for main weather box
