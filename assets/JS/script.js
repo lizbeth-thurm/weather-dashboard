@@ -30,7 +30,6 @@ function logCity(cityName) {
   if (cityIt == 0) {
     document.getElementById('cityBox1').classList.remove("invisible");
     document.getElementById('cityBox1').classList.add("visible");
-
   }
   else if (cityIt == 1) {
     document.getElementById('cityBox2').classList.remove("invisible");
