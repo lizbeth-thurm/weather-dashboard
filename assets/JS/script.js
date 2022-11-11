@@ -4,7 +4,6 @@ var resp; // variable for json response
 var data; // variable for json data
 var lat; // variable for lattitude of city
 var lon; // variable for longitude of city
-var cityIt; // iterate the city count
 
 var cityList = []; // array for list of cities
 
@@ -17,52 +16,73 @@ function logCity(cityName) {
   // Shift array to put newest city first
   cityList.unshift(cityName);
 
-  // Set up the city list array elements to show in boxes
-  document.getElementById('cityBox1').innerHTML = cityList[0];
-  document.getElementById('cityBox2').innerHTML = cityList[1];
-  document.getElementById('cityBox3').innerHTML = cityList[2];
-  document.getElementById('cityBox4').innerHTML = cityList[3];
-  document.getElementById('cityBox5').innerHTML = cityList[4];
-  document.getElementById('cityBox6').innerHTML = cityList[5];
-  document.getElementById('cityBox7').innerHTML = cityList[6];
+  localStorage.setItem("cityListKey", JSON.stringify(cityList));
 
-  // set up iterable stored in local user data
-  localStorage.setItem(cityIt, cityList.length);
-  cityIt = localStorage.getItem(cityIt);
+  //...
+  var storedCityList = JSON.parse(localStorage.getItem("cityListKey"));
+
+  console.log(storedCityList);
+
+  // Set up the city list array elements to show in boxes
+  document.getElementById('cityBox1').innerHTML = storedCityList[0];
+  document.getElementById('cityBox2').innerHTML = storedCityList[1];
+  document.getElementById('cityBox3').innerHTML = storedCityList[2];
+  document.getElementById('cityBox4').innerHTML = storedCityList[3];
+  document.getElementById('cityBox5').innerHTML = storedCityList[4];
+  document.getElementById('cityBox6').innerHTML = storedCityList[5];
+  document.getElementById('cityBox7').innerHTML = storedCityList[6];
+
 
   // Unhide boxes when array includes city elements
-  if (cityIt == 1) {
+  if (storedCityList.length == 1) {
     document.getElementById('cityBox1').classList.remove("invisible");
     document.getElementById('cityBox1').classList.add("visible");
   }
-  else if (cityIt == 2) {
+  else if (storedCityList.length == 2) {
     document.getElementById('cityBox2').classList.remove("invisible");
     document.getElementById('cityBox2').classList.add("visible");
   }
-  else if (cityIt == 3) {
+  else if (storedCityList.length == 3) {
     document.getElementById('cityBox3').classList.remove("invisible");
     document.getElementById('cityBox3').classList.add("visible");
   }
-  else if (cityIt == 4) {
+  else if (storedCityList.length == 4) {
     document.getElementById('cityBox4').classList.remove("invisible");
     document.getElementById('cityBox4').classList.add("visible");
   }
-  else if (cityIt == 5) {
+  else if (storedCityList.length == 5) {
     document.getElementById('cityBox5').classList.remove("invisible");
     document.getElementById('cityBox5').classList.add("visible");
   }
-  else if (cityIt == 6) {
+  else if (storedCityList.length == 6) {
     document.getElementById('cityBox6').classList.remove("invisible");
     document.getElementById('cityBox6').classList.add("visible");
   }
-  else if (cityIt == 7) {
+  else if (storedCityList.length == 7) {
     document.getElementById('cityBox7').classList.remove("invisible");
     document.getElementById('cityBox7').classList.add("visible");
   }
-  else {
-
+  else if (storedCityList.length > 7) {
+    document.getElementById('cityBox1').classList.remove("invisible");
+    document.getElementById('cityBox1').classList.add("visible");
+    document.getElementById('cityBox2').classList.remove("invisible");
+    document.getElementById('cityBox2').classList.add("visible");
+    document.getElementById('cityBox3').classList.remove("invisible");
+    document.getElementById('cityBox3').classList.add("visible");
+    document.getElementById('cityBox4').classList.remove("invisible");
+    document.getElementById('cityBox4').classList.add("visible");
+    document.getElementById('cityBox5').classList.remove("invisible");
+    document.getElementById('cityBox5').classList.add("visible");
+    document.getElementById('cityBox6').classList.remove("invisible");
+    document.getElementById('cityBox6').classList.add("visible");
+    document.getElementById('cityBox7').classList.remove("invisible");
+    document.getElementById('cityBox7').classList.add("visible");
   }
-  cityIt = cityIt + 1;
+  else{
+    console.log("nope");
+  }
+  
+
 }
 
 //  Weather report for main weather box
@@ -72,7 +92,6 @@ function weatherReport(cityName) {
     .then(function (data) {
 
       drawWeather(data);
-      console.log(data);
     })
     .catch(function () {
       // catch any errors
@@ -111,7 +130,6 @@ function fiveDay(lat, lon) {
     .then(function (resp) { return resp.json() })
     .then(function (data) {
 
-      console.log(data);
       drawFiveDay(data);
     });
 }
@@ -151,6 +169,7 @@ button2.addEventListener("click", function () {
   logCity(citySearch.value);
   geoCode(citySearch.value);
   weatherReport(citySearch.value);
+  
 });
 
 
