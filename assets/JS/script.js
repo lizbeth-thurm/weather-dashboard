@@ -10,17 +10,20 @@ var cityList = []; // array for list of cities
 
 var cityListHistory = JSON.parse(localStorage.getItem("cityListKey"));
 
-console.log(cityListHistory);
-
-console.log(cityList)
-
 var citySearch = document.getElementById('citySearch');
 var button2 = document.getElementById('button-addon2');
 
 function startCityLoad() {
-  storedCityList = JSON.parse(localStorage.getItem("cityListKey"));
 
   console.log(storedCityList);
+
+    storedCityList = JSON.parse(localStorage.getItem("cityListKey"));
+
+    console.log(storedCityList);
+    
+    if(storedCityList == null){
+      storedCityList = "";
+    }
 
   // Set up the city list array elements to show in boxes
   document.getElementById('cityBox1').innerHTML = storedCityList[0];
@@ -283,11 +286,7 @@ function drawFiveDay(d) {
   document.getElementById('humidity5').innerHTML = `Humidity: ${d.list[39].main.humidity} %`;
 }
 
-
-
 window.onload = startCityLoad();
-
-
 
 // Logic for getting city name from search box when button is clickedl.
 button2.addEventListener("click", function () {
