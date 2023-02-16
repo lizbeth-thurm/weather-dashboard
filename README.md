@@ -12,9 +12,9 @@ This code generates a site that allows users to search for a city and view curre
 
 ## Links
 
-<a href="https://skip-thurm.github.io/weather-dashboard/">Link to Deployed Page</a>
+<a href="https://lizbeth-thurm.github.io/weather-dashboard/">Link to Deployed Page</a>
 
-<a href="https://github.com/skip-thurm/weather-dashboard/">Link to Github Page with Code</a>
+<a href="https://github.com/lizbeth-thurm/weather-dashboard/">Link to Github Page with Code</a>
 
 ## Author
 
@@ -22,4 +22,4 @@ Skipper Thurman
 
 email: slthurman01@gmail.com
 
-<a href="https://github.com/skip-thurm">Personal Github Page</a>
+<a href="https://github.com/lizbeth-thurm">Personal Github Page</a>
